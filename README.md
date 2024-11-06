@@ -19,4 +19,4 @@ Pokidex is an image recognition application that allows users to upload images o
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/pokidex.git
+   git clone https://github.com/CodeWithAmitKumar/pokidex.git
