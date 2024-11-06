@@ -92,42 +92,10 @@ export function ResultCard({ loading, result, image, imageName }: ResultCardProp
           <p className="text-gray-600 dark:text-gray-300">{result.description || "No description available."}</p>
         </div>
 
-        {/* Specification */}
+        {/* Habitat */}
         <div>
-          <h3 className="font-medium mb-2">Specifications</h3>
-          <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300">
-            {result.specifications && result.specifications.length > 0 ? (
-              result.specifications.map((spec, index) => (
-                <li key={index}>{spec}</li>
-              ))
-            ) : (
-              <li>No specifications available.</li>
-            )}
-          </ul>
-        </div>
-
-        {/* Weight */}
-        <div>
-          <h3 className="font-medium mb-2">Weight</h3>
-          <p className="text-gray-600 dark:text-gray-300">
-            {result.weight || "No weight information available."}
-          </p>
-        </div>
-
-        {/* Dangerousness */}
-        <div>
-          <h3 className="font-medium mb-2">Dangerousness</h3>
-          <p className="text-gray-600 dark:text-gray-300">
-            {result.dangerousness
-              ? result.dangerousness
-              : "No information on dangerousness available."}
-          </p>
-        </div>
-
-        {/* Where It’s Mostly Found */}
-        <div>
-          <h3 className="font-medium mb-2">Where It’s Mostly Found</h3>
-          <p className="text-gray-600 dark:text-gray-300">{result.foundIn || "No information available."}</p>
+          <h3 className="font-medium mb-2">Habitat</h3>
+          <p className="text-gray-600 dark:text-gray-300">{result.habitat || "No habitat information available."}</p>
         </div>
 
         {/* Characteristics (Check for available data) */}
@@ -140,6 +108,20 @@ export function ResultCard({ loading, result, image, imageName }: ResultCardProp
               ))
             ) : (
               <li>No characteristics available.</li>
+            )}
+          </ul>
+        </div>
+
+        {/* Fun Facts (Check for available data) */}
+        <div>
+          <h3 className="font-medium mb-2">Fun Facts</h3>
+          <ul className="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-300">
+            {Array.isArray(result.funFacts) && result.funFacts.length > 0 ? (
+              result.funFacts.map((fact, index) => (
+                <li key={index}>{fact}</li>
+              ))
+            ) : (
+              <li>No fun facts available.</li>
             )}
           </ul>
         </div>
